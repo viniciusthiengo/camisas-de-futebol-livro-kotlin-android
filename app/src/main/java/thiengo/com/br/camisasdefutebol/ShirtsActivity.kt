@@ -15,12 +15,15 @@ import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.EditText
 import android.widget.TextView
 import com.afollestad.materialdialogs.DialogAction
 import com.afollestad.materialdialogs.MaterialDialog
 import kotlinx.android.synthetic.main.activity_shirts.*
 import thiengo.com.br.camisasdefutebol.data.Database
 import thiengo.com.br.camisasdefutebol.extension.priceBRFormat
+import thiengo.com.br.camisasdefutebol.extension.validation
+import thiengo.com.br.camisasdefutebol.util.luhnAlgorithm
 import java.util.*
 
 
@@ -107,7 +110,8 @@ class ShirtsActivity : AppCompatActivity(),
                     .neutralText(R.string.pay_neutral_button_label)
                     .neutralColorRes(R.color.colorToolbarItensColor)
                     .showListener(this)
-                    .onPositive(this)
+                    .onAny(this)
+                    .autoDismiss(false)
                     .show()
         }
 
@@ -143,21 +147,55 @@ class ShirtsActivity : AppCompatActivity(),
 
     /*
      * Método responsável por invocar a caixa de diálogo que
-     * apresenta um progresso indeterminado. Assim simulamos
-     * que algo de pesado está sendo processado no background
-     * do aplicativo.
+     * apresenta um progresso indeterminado (simulando um
+     * processamento pesado em background), isso se os campos
+     * tiverem sido todos preenchidos corretamente, pois
+     * caso contrário os campos com dados inválidos serão
+     * destacados em vermelho. Se o neutralButton for
+     * acionado, a caixa de diálogo de pagamento será apenas
+     * fechada.
      * */
     override fun onClick( dialog: MaterialDialog, which: DialogAction ) {
-        val materialDialog = MaterialDialog
-            .Builder(this)
-                .title(R.string.pay_process_title)
-                .titleColorRes(R.color.colorToolbarItensColor)
-                .content(R.string.pay_process_content)
-                .progress(true, 0)
-                .cancelable(false)
-                .show()
 
-        callHeavyJobSimulator( materialDialog )
+        if( which == DialogAction.POSITIVE
+            && validation( dialog ) ){
+
+            dialog.dismiss()
+
+            val materialDialog = MaterialDialog
+                .Builder(this)
+                    .title(R.string.pay_process_title)
+                    .titleColorRes(R.color.colorToolbarItensColor)
+                    .content(R.string.pay_process_content)
+                    .progress(true, 0)
+                    .cancelable(false)
+                    .show()
+
+            callHeavyJobSimulator( materialDialog )
+        }
+        else if( which == DialogAction.NEUTRAL ){
+            dialog.dismiss()
+        }
+    }
+
+    /*
+     * Método que contém o acesso e invocação de validação dos
+     * campos de texto, EditTexts, presentes na caixa de diálogo
+     * de pagamento.
+     * */
+    private fun validation( dialog: MaterialDialog ): Boolean{
+        val etNumber= dialog.customView!!.findViewById<EditText>(R.id.et_card_number)
+        val etCvv= dialog.customView!!.findViewById<EditText>(R.id.et_card_cvv)
+        val etName= dialog.customView!!.findViewById<EditText>(R.id.et_card_name)
+
+        val isNumber = etNumber.validation(this) {
+            etNumber.text.isEmpty()
+            || !luhnAlgorithm( etNumber.text.toString() )
+        }
+        val isCvv = etCvv.validation(this) { etCvv.text.isEmpty() }
+        val isName = etName.validation( this ) { etName.text.isEmpty() }
+
+        return isNumber && isCvv && isName
     }
 
     /*
@@ -190,14 +228,22 @@ class ShirtsActivity : AppCompatActivity(),
         }.start()
     }
 
+    /*
+     * Responsável por invocar a última caixa de diálogo,
+     * com a resposta de "pagamento realizado com sucesso".
+     * Em um domínio do problema real, no qual o app irá a
+     * produção, teria de haver a validação da resposta do
+     * back-end para assim mostrar se o pagamento foi ou
+     * não aprovado.
+     * */
     private fun callDialogFinishBuy(){
-
         /*
          * SpannableStringBuilder e SpannableString estão
          * sendo utilizados para que seja possível a
          * customização de String sem a necessidade de
          * trabalho com CustomView. Mais sobre SpannedString
          * no link a seguir:
+         *
          * https://www.thiengo.com.br/como-utilizar-spannable-no-android-para-customizar-strings
          * */
         val spanContent = SpannableStringBuilder(getString(R.string.pay_done_content))

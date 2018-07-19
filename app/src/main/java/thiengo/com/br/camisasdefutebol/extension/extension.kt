@@ -1,5 +1,9 @@
 package thiengo.com.br.camisasdefutebol.extension
 
+import android.content.Context
+import android.support.v4.content.ContextCompat
+import android.widget.EditText
+import thiengo.com.br.camisasdefutebol.R
 import java.util.*
 
 /*
@@ -22,3 +26,59 @@ fun Float.priceBRFormat( moneySign: String ) =
         moneySign,
         this
     )
+
+/*
+ * Permite a validação única de campo, EditText, com base
+ * no Lambda, literal de função, passado como argumento.
+ * */
+fun EditText.validation(
+    context: Context,
+    fieldVerification: ()->Boolean ): Boolean{
+
+    if( fieldVerification() ){
+        this.setErrorBorder(context)
+        return false
+    }
+    else{
+        this.setNormalBorder(context)
+        return true
+    }
+}
+
+/*
+ * Define o drawable edittext_border_and_background (borda
+ * cinza) no EditText para indicar que o valor no campo é
+ * válido.
+ * */
+private fun EditText.setNormalBorder( context: Context ){
+    this.setBorder(
+        context,
+        R.drawable.edittext_border_and_background
+    )
+}
+
+/*
+ * Define o drawable edittext_border_and_background_error
+ * (borda vermelha) no EditText para indicar que o valor no
+ * campo é inválido.
+ * */
+private fun EditText.setErrorBorder( context: Context ){
+    this.setBorder(
+        context,
+        R.drawable.edittext_border_and_background_error
+    )
+}
+
+/*
+ * Para evitar repetição de código, o método abaixo é o que
+ * realmente modifica a borda do EditText alvo. Ele é
+ * utilizado nos dois métodos anteriores de configuração de
+ * borda.
+ * */
+private fun EditText.setBorder( context: Context, drawableId: Int ){
+    this.background = ContextCompat
+        .getDrawable(
+            context,
+            drawableId
+        )
+}
