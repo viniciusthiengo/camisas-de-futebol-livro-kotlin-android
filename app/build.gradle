@@ -25,9 +25,15 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
 
+    /*
+     * Para o uso de: CoordinatorLayout, AppBarLayout,
+     * Toolbar e RecyclerView.
+     * */
     implementation 'com.android.support:design:27.1.1'
 
+    // Para o uso da RoundedImageView API
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
+    // Para o uso da MaterialDialogs API
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
 }
