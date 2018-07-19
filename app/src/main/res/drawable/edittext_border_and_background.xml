@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--
+        Cor de background do shape retangular que está
+        sendo trabalhado.
+    -->
+    <solid android:color="@android:color/transparent" />
+
+    <!--
+        Curvatura das bordas do shape retangular. O
+        padrão é 0, onde não há alguma curvatura.
+    -->
+    <corners android:radius="2dp" />
+
+    <!--
+        Largura e cor da borda do shape retangular.
+    -->
+    <stroke
+        android:width="0.8dp"
+        android:color="@color/colorDarkGrey" />
+</shape>

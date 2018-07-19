@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Tema padrão, aplicado em todo o projeto. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="android:windowBackground">@drawable/background</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--
+        Para que a barra de topo padrão não seja utilizada e
+        assim somente o AppBar junto ao Toolbar possam ser
+        usados.
+    -->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Para o correto enquadramento do AppBarLayout. -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!--
+        Utilizado para a correta apresentação de menus de pop-up
+        em barra de topo.
+    -->
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--
+        Tema para personalizar a cor dos ícones de navegação e
+        da seta de "voltar" da barra de topo.
+    -->
+    <style name="AppTheme.ToolbarIconColor" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <item name="colorControlNormal">@color/colorToolbarItensColor</item>
+    </style>
+
+    <!--
+        Tema para personalizar o título da barra de topo.
+    -->
+    <style name="AppTheme.ToolbarFont" parent="@android:style/TextAppearance">
+
+        <item name="android:fontFamily">@font/playfair_display_sc_regular</item>
+        <item name="android:textColor">@color/colorToolbarItensColor</item>
+        <item name="android:textSize">21sp</item>
+    </style>
+
+    <!--
+        Para os ícones de "level de uniforme" e de "frete"
+        da lista de itens do carrinho de compras. Muitas
+        linhas de códigos estáticos serão economizadas.
+    -->
+    <style name="AppTheme.ListItemIcon">
+        <item name="android:layout_width">@dimen/list_icon_width</item>
+        <item name="android:layout_height">@dimen/list_icon_height</item>
+        <item name="android:layout_marginBottom">@dimen/list_icon_margin_bottom</item>
+        <item name="android:layout_marginRight">@dimen/list_icon_margin_right</item>
+        <item name="android:layout_marginEnd">@dimen/list_icon_margin_right</item>
+        <item name="android:padding">@dimen/list_icon_padding</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:tint">@color/colorIcon</item>
+    </style>
+
+    <!--
+        Para os campos de seleção de opções da caixa de
+        diálogo de pagamento. Muitas linhas de códigos
+        estáticos serão economizadas.
+    -->
+    <style name="AppTheme.SpinnerPay">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/spinner_border_and_background</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:popupBackground">@color/colorPrimary</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:theme">@style/AppTheme.SpinnerOptionsTextColor</item>
+    </style>
+
+    <!--
+        Os dois temas a seguir nos permitem atualizar a cor
+        utilizada nos itens dos Spinners. Tanto os passíveis
+        de seleção como o já selecionado.
+    -->
+    <style name="AppTheme.SpinnerOptionsTextColor">
+        <item name="android:textViewStyle">@style/AppTheme.TextViewStyleDark</item>
+    </style>
+    <style name="AppTheme.TextViewStyleDark" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/colorDarkGrey</item>
+    </style>
+
+    <!--
+        Para os rótulos dos conteúdos em texto da caixa de
+        diálogo de pagamento. Muitas linhas de códigos
+        estáticos serão economizadas.
+    -->
+    <style name="AppTheme.TextViewPayLabels">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorDarkGrey</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <!--
+        Para os campos de entrada em texto da caixa de
+        diálogo de pagamento. Muitas linhas de códigos
+        estáticos serão economizadas.
+    -->
+    <style name="AppTheme.EditTextPay">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorDarkGrey</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/edittext_border_and_background</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>

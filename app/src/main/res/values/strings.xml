@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Camisas de Futebol</string>
+
+    <string name="it_buy">Comprar</string>
+
+    <string name="ic_level_description">Ícone de tipo do uniforme (1, 2 ou 3)</string>
+    <string name="ic_delivery_description">Ícone de frete</string>
+    <string name="ic_remove_description">Ícone de remover item de carrinho</string>
+
+    <string name="money_sign">R$</string>
+    <string name="uniform">Uniforme</string>
+    <string name="freight">Frete</string>
+    <string name="unity">unidade</string>
+    <string name="units">unidades</string>
+
+    <!--
+        Strings da caixa de diálogo de pagamento.
+    -->
+    <string name="pay_title">
+        Pagamento
+    </string>
+    <string name="pay_positive_button_label">
+        PAGAR
+    </string>
+    <string name="pay_neutral_button_label">
+        VOLTAR
+    </string>
+    <string name="pay_credit_cards_description">Bandeiras de cartão aceitas</string>
+    <string name="pay_label_card_number">Número do cartão:</string>
+    <string name="pay_hint_card_number">xxxx xxxx xxxx xxxx</string>
+    <string name="pay_label_card_cvv">Código de segurança - CVV:</string>
+    <string name="pay_hint_card_cvv">xxx ou xxxx</string>
+    <string name="pay_label_card_owner">Nome do proprietário do cartão - como está no cartão:</string>
+    <string name="pay_label_card_expire">Vencimento cartão</string>
+    <string name="pay_label_card_expire_month">Mês:</string>
+    <string name="pay_label_card_expire_bar">/</string>
+    <string name="pay_label_card_expire_year">Ano:</string>
+    <string name="pay_label_card_total_parcels">Número de parcelas. Se > 10x tem adição de juros:</string>
+    <string name="pay_label_total">Total:</string>
+    <string name="pay_label_parcels_without_taxes">em até 10x sem juros.</string>
+
+    <!--
+        Strings da caixa de diálogo de processamento de
+        pagamento.
+    -->
+    <string name="pay_process_title">
+        Processando pagamento
+    </string>
+    <!--
+        &#8230; é equivalente a "...". Isso é algo recomendado
+        pelo próprio IDE Android Studio: quando houver código
+        estático, como &#8230;, que represente um trecho de
+        texto que você estiver utilizando, use o código
+        estático.
+    -->
+    <string name="pay_process_content">
+        Aguarde&#8230;
+    </string>
+
+    <!--
+        Strings da caixa de diálogo de pagamento realizado com
+        sucesso.
+    -->
+    <string name="pay_done_title">
+        Pagamento realizado
+    </string>
+    <string name="pay_done_content">
+        Pagamento realizado com sucesso. Aguarde a nota fiscal em email.\n\n
+    </string>
+    <string name="pay_done_order_label">
+        Nº pedido:
+    </string>
+    <string name="pay_done_button_label">
+        OK
+    </string>
+</resources>

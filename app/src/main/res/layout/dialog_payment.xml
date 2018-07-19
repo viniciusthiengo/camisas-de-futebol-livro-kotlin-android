@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_cards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/pay_credit_cards_description"
+        android:scaleType="fitCenter"
+        android:src="@drawable/credit_cards" />
+
+    <View
+        android:id="@+id/vv_horizontal_line_01"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/iv_cards"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/colorLightGrey" />
+
+    <TextView
+        android:id="@+id/tv_card_number"
+        style="@style/AppTheme.TextViewPayLabels"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/vv_horizontal_line_01"
+        android:text="@string/pay_label_card_number" />
+
+    <EditText
+        android:id="@+id/et_card_number"
+        style="@style/AppTheme.EditTextPay"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_card_number"
+        android:layout_toLeftOf="@+id/et_card_cvv"
+        android:layout_toStartOf="@+id/et_card_cvv"
+        android:hint="@string/pay_hint_card_number"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/tv_card_cvv"
+        style="@style/AppTheme.TextViewPayLabels"
+        android:layout_alignLeft="@+id/et_card_cvv"
+        android:layout_alignStart="@+id/et_card_cvv"
+        android:layout_below="@+id/vv_horizontal_line_01"
+        android:text="@string/pay_label_card_cvv" />
+
+    <EditText
+        android:id="@+id/et_card_cvv"
+        style="@style/AppTheme.EditTextPay"
+        android:layout_width="140dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_card_cvv"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:hint="@string/pay_hint_card_cvv"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/tv_card_name"
+        style="@style/AppTheme.TextViewPayLabels"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/et_card_number"
+        android:layout_marginTop="12dp"
+        android:text="@string/pay_label_card_owner" />
+
+    <EditText
+        android:id="@+id/et_card_name"
+        style="@style/AppTheme.EditTextPay"
+        android:layout_width="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_card_name"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/tv_card_expired"
+        style="@style/AppTheme.TextViewPayLabels"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/et_card_name"
+        android:layout_marginTop="12dp"
+        android:text="@string/pay_label_card_expire" />
+
+    <TextView
+        android:id="@+id/tv_card_expired_month"
+        style="@style/AppTheme.TextViewPayLabels"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_card_expired"
+        android:layout_marginTop="-2dp"
+        android:text="@string/pay_label_card_expire_month" />
+
+    <Spinner
+        android:id="@+id/sp_card_expired_month"
+        style="@style/AppTheme.SpinnerPay"
+        android:layout_width="44dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_card_expired_month"
+        android:entries="@array/months" />
+
+    <TextView
+        android:id="@+id/tv_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/sp_card_expired_month"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="7dp"
+        android:layout_toEndOf="@+id/sp_card_expired_month"
+        android:layout_toRightOf="@+id/sp_card_expired_month"
+        android:text="@string/pay_label_card_expire_bar"
+        android:textColor="@color/colorDarkGrey"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_card_expired_year"
+        style="@style/AppTheme.TextViewPayLabels"
+        android:layout_alignLeft="@+id/sp_card_expired_year"
+        android:layout_alignStart="@+id/sp_card_expired_year"
+        android:layout_alignTop="@+id/tv_card_expired_month"
+        android:text="@string/pay_label_card_expire_year" />
+
+    <Spinner
+        android:id="@+id/sp_card_expired_year"
+        style="@style/AppTheme.SpinnerPay"
+        android:layout_width="61dp"
+        android:layout_below="@+id/tv_card_expired_year"
+        android:layout_toEndOf="@+id/tv_bar"
+        android:layout_toRightOf="@+id/tv_bar"
+        android:entries="@array/years" />
+
+    <View
+        android:id="@+id/vv_vertical_line_01"
+        android:layout_width="1dp"
+        android:layout_height="68dp"
+        android:layout_alignTop="@+id/tv_card_expired"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@+id/sp_card_expired_year"
+        android:layout_toRightOf="@+id/sp_card_expired_year"
+        android:background="@color/colorLightGrey" />
+
+    <TextView
+        android:id="@+id/tv_buy_parcels"
+        style="@style/AppTheme.TextViewPayLabels"
+        android:layout_alignTop="@+id/tv_card_expired"
+        android:layout_toEndOf="@+id/vv_vertical_line_01"
+        android:layout_toRightOf="@+id/vv_vertical_line_01"
+        android:text="@string/pay_label_card_total_parcels" />
+
+    <Spinner
+        android:id="@+id/sp_buy_parcels"
+        style="@style/AppTheme.SpinnerPay"
+        android:layout_width="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_buy_parcels"
+        android:layout_toEndOf="@+id/vv_vertical_line_01"
+        android:layout_toRightOf="@+id/vv_vertical_line_01"
+        android:entries="@array/parcels" />
+
+    <View
+        android:id="@+id/vv_horizontal_line_02"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/sp_buy_parcels"
+        android:layout_marginBottom="11dp"
+        android:layout_marginTop="11dp"
+        android:background="@color/colorLightGrey" />
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/vv_horizontal_line_02"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/pay_label_total"
+        android:textColor="@color/colorDarkGrey"
+        android:textSize="19sp" />
+
+    <TextView
+        android:id="@+id/tv_total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_total"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toEndOf="@+id/tv_total"
+        android:layout_toRightOf="@+id/tv_total"
+        android:textColor="@color/colorPrice"
+        android:textSize="19sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/tv_total_parcels"
+        style="@style/AppTheme.TextViewPayLabels"
+        android:layout_alignTop="@+id/tv_total_price"
+        android:layout_marginTop="9dp"
+        android:layout_toEndOf="@+id/tv_total_price"
+        android:layout_toRightOf="@+id/tv_total_price"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/pay_label_parcels_without_taxes" />
+</RelativeLayout>
