@@ -20,7 +20,7 @@ class Shirt(
 
     /*
      * Permite a apresentação já formatada, para humanos,
-     * dos dados de de entrega: rótulo e valor.
+     * dos dados de entrega: rótulo e valor.
      * */
     fun deliveryHumanFormat( freight: String ) =
         String.format("%s %s", freight, delivery)

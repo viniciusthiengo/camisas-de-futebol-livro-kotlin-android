@@ -16,24 +16,31 @@
         usados.
     -->
     <style name="AppTheme.NoActionBar">
+
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
     <!-- Para o correto enquadramento do AppBarLayout. -->
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style
+        name="AppTheme.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <!--
         Utilizado para a correta apresentação de menus de pop-up
         em barra de topo.
     -->
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style
+        name="AppTheme.PopupOverlay"
+        parent="ThemeOverlay.AppCompat.Light" />
 
     <!--
         Tema para personalizar a cor dos ícones de navegação e
         da seta de "voltar" da barra de topo.
     -->
-    <style name="AppTheme.ToolbarIconColor" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+    <style
+        name="AppTheme.ToolbarIconColor"
+        parent="@style/ThemeOverlay.AppCompat.ActionBar">
 
         <item name="colorControlNormal">@color/colorToolbarItensColor</item>
     </style>
@@ -41,7 +48,9 @@
     <!--
         Tema para personalizar o título da barra de topo.
     -->
-    <style name="AppTheme.ToolbarFont" parent="@android:style/TextAppearance">
+    <style
+        name="AppTheme.ToolbarFont"
+        parent="@android:style/TextAppearance">
 
         <item name="android:fontFamily">@font/playfair_display_sc_regular</item>
         <item name="android:textColor">@color/colorToolbarItensColor</item>
@@ -51,7 +60,8 @@
     <!--
         Para os ícones de "level de uniforme" e de "frete"
         da lista de itens do carrinho de compras. Muitas
-        linhas de códigos estáticos serão economizadas.
+        linhas de códigos estáticos serão economizadas
+        devido ao uso deste tema.
     -->
     <style name="AppTheme.ListItemIcon">
         <item name="android:layout_width">@dimen/list_icon_width</item>
@@ -67,7 +77,8 @@
     <!--
         Para os campos de seleção de opções da caixa de
         diálogo de pagamento. Muitas linhas de códigos
-        estáticos serão economizadas.
+        estáticos serão economizadas devido ao uso deste
+        tema.
     -->
     <style name="AppTheme.SpinnerPay">
         <item name="android:layout_height">wrap_content</item>
@@ -82,7 +93,7 @@
     <!--
         Os dois temas a seguir nos permitem atualizar a cor
         utilizada nos itens dos Spinners. Tanto os passíveis
-        de seleção como o já selecionado.
+        de seleção como o item já selecionado.
     -->
     <style name="AppTheme.SpinnerOptionsTextColor">
         <item name="android:textViewStyle">@style/AppTheme.TextViewStyleDark</item>
@@ -94,7 +105,8 @@
     <!--
         Para os rótulos dos conteúdos em texto da caixa de
         diálogo de pagamento. Muitas linhas de códigos
-        estáticos serão economizadas.
+        estáticos serão economizadas devido ao uso deste
+        tema.
     -->
     <style name="AppTheme.TextViewPayLabels">
         <item name="android:layout_width">wrap_content</item>
@@ -105,9 +117,10 @@
     </style>
 
     <!--
-        Para os campos de entrada em texto da caixa de
+        Para os campos de entrada de texto da caixa de
         diálogo de pagamento. Muitas linhas de códigos
-        estáticos serão economizadas.
+        estáticos serão economizadas devido ao uso deste
+        tema.
     -->
     <style name="AppTheme.EditTextPay">
         <item name="android:layout_height">wrap_content</item>

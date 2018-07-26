@@ -71,7 +71,7 @@ class ShirtsActivity : AppCompatActivity(),
         /*
          * O método setDrawable() não aceita null como
          * argumento e a assinatura de ContextCompat.getDrawable()
-         * indica que um null pode ser retornado, mesmo como nós
+         * indica que um null pode ser retornado, mesmo com nós
          * desenvolvedores sabendo que isso é improvável para
          * a configuração que estamos trabalhando. Devido a
          * exigência de um "não null" em setDrawable() o
@@ -89,6 +89,10 @@ class ShirtsActivity : AppCompatActivity(),
         rv_shirts.adapter = ShirtsAdapter(this, shirts )
     }
 
+    /*
+	 * Permitindo que o menu de topo, com o botão de ícone referente a
+	 * "comprar", seja apresentado.
+	 * */
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_shirts, menu)
         return true
@@ -96,7 +100,7 @@ class ShirtsActivity : AppCompatActivity(),
 
     /*
      * Método nativo de seleção de item de menu de topo,
-     * aqui com o proósito de invocar a caixa de diálogo
+     * aqui com o propósito de invocar a caixa de diálogo
      * de pagamento.
      * */
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {

@@ -56,15 +56,15 @@ class ShirtsAdapter(
 
             /*
              * Note que em todo o projeto trabalhamos com
-             * referencias de Strings, como em R.string.uniform.
+             * referências de Strings, como em R.string.uniform.
              * Isso facilita a posterior internacionalização
              * de aplicativo caso seja um passo importante no
-             * momento de expansão de público dele. Acostume-se
+             * momento de expansão de público alvo dele. Acostume-se
              * a fazer isso em qualquer um dos projetos em que
              * você trabalhar, pois até mesmo os códigos
              * repetidos, Strings utilizadas em mais de um ponto,
              * são diminuídos e o ponto de atualização passa a
-             * ser somente em /strings.xml.
+             * ser somente em arquivos XML de definição de Strings.
              * */
 
             tvSoccerTeam.text = shirt.soccerTeam

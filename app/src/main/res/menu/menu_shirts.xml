@@ -4,8 +4,8 @@
     tools:context="thiengo.com.br.camisasdefutebol.ShirtsActivity">
     <item
         android:id="@+id/it_buy"
+        android:icon="@drawable/ic_buy"
         android:orderInCategory="100"
         android:title="@string/it_buy"
-        android:icon="@drawable/ic_buy"
         app:showAsAction="always" />
 </menu>
