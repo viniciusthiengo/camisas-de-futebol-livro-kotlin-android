@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    <layer-list> tende a ser utilizado para definições complexas
+    de background de componente visual.
+-->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <!--
-        Definição complexa de background de componente
-        visual.
-    -->
-
-    <!--
-        Defnição de: cor de background; curvatura de borda;
-        e cor e largura de borda do componente retangular
-        que está sendo trabalhado.
+        No <item> a seguir temos defnição de: cor de background;
+        curvatura de borda; e cor e largura de borda do componente
+        retangular que está sendo trabalhado.
     -->
     <item>
         <shape android:shape="rectangle">
@@ -21,12 +20,12 @@
     </item>
 
     <!--
-        Defnição de imagem de background, no caso a imagem
-        ic_keyboard_arrow_down_white_18dp. A imagem estará
-        centralizada na vertical e a 0.5dp da borda direita
-        (center_vertical|right) do componente container (em
-        nosso domínio do problema Spinner é o container).
-        A cor da imagem também está sendo definida via tint.
+        No <item> a seguir temos a defnição de imagem de background,
+        no caso a imagem ic_keyboard_arrow_down_white_18dp. A imagem
+        estará centralizada na vertical e a 0.5dp da borda direita
+        (center_vertical|right) do componente container (em nosso
+        domínio do problema Spinner é o container). A cor da imagem
+        também está sendo definida via tint.
     -->
     <item android:right="0.5dp">
         <bitmap

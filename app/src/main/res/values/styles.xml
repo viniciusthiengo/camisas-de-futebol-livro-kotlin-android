@@ -78,7 +78,7 @@
         Para os campos de seleção de opções da caixa de
         diálogo de pagamento. Muitas linhas de códigos
         estáticos serão economizadas devido ao uso deste
-        tema.
+        estilo.
     -->
     <style name="AppTheme.SpinnerPay">
         <item name="android:layout_height">wrap_content</item>
@@ -91,7 +91,7 @@
     </style>
 
     <!--
-        Os dois temas a seguir nos permitem atualizar a cor
+        Os dois estilos a seguir nos permitem atualizar a cor
         utilizada nos itens dos Spinners. Tanto os passíveis
         de seleção como o item já selecionado.
     -->

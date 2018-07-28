@@ -1,5 +1,7 @@
 package thiengo.com.br.camisasdefutebol.util
 
+import java.util.*
+
 /*
  * Implementação simples do algoritmo de Luhn, algoritmo
  * utilizado para validação de números de cartão de
@@ -28,4 +30,15 @@ fun luhnAlgorithm( creditCardNumber: String ): Boolean{
     }
 
     return sum % 10 == 0
+}
+
+/*
+ * Simulador de código de compra realizada. O "+ 10000000"
+ * é necessário, pois Random().nextInt(10000000) pode gerar
+ * qualquer valor entre 0 e 9999999. Com o "+ 10000000"
+ * garantimos os 8 digitos de código de compra.
+ * */
+fun orderCodeGenerator(): String{
+    val code = Random().nextInt(10000000) + 10000000
+    return String.format(" %d", code)
 }

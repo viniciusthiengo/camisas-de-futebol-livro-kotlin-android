@@ -32,41 +32,27 @@ fun Float.priceBRFormat( moneySign: String ) =
  * no Lambda, literal de função, passado como argumento.
  * */
 fun EditText.validation(
-    context: Context,
-    fieldVerification: ()->Boolean ): Boolean{
+        fieldVerification: ()->Boolean
+    ): Boolean{
 
-    if( fieldVerification() ){
-        this.setErrorBorder(context)
+    if( fieldVerification() ){ // Dado inválido.
+        /*
+         * Define o drawable edittext_border_and_background_error
+         * (borda vermelha) no EditText para indicar que o valor no
+         * campo é inválido.
+         * */
+        this.setBorder( R.drawable.edittext_border_and_background_error )
         return false
     }
-    else{
-        this.setNormalBorder(context)
+    else{ // Dado válido.
+        /*
+         * Define o drawable edittext_border_and_background (borda
+         * cinza) no EditText para indicar que o valor no campo é
+         * válido.
+         * */
+        this.setBorder( R.drawable.edittext_border_and_background )
         return true
     }
-}
-
-/*
- * Define o drawable edittext_border_and_background (borda
- * cinza) no EditText para indicar que o valor no campo é
- * válido.
- * */
-private fun EditText.setNormalBorder( context: Context ){
-    this.setBorder(
-        context,
-        R.drawable.edittext_border_and_background
-    )
-}
-
-/*
- * Define o drawable edittext_border_and_background_error
- * (borda vermelha) no EditText para indicar que o valor no
- * campo é inválido.
- * */
-private fun EditText.setErrorBorder( context: Context ){
-    this.setBorder(
-        context,
-        R.drawable.edittext_border_and_background_error
-    )
 }
 
 /*
@@ -75,10 +61,10 @@ private fun EditText.setErrorBorder( context: Context ){
  * utilizado nos dois métodos anteriores de configuração de
  * borda.
  * */
-private fun EditText.setBorder( context: Context, drawableId: Int ){
+private fun EditText.setBorder( drawableId: Int ){
     this.background = ContextCompat
         .getDrawable(
-            context,
+            this.context,
             drawableId
         )
 }

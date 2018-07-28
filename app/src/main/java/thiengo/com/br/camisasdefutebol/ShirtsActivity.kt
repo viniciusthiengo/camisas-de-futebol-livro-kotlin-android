@@ -24,6 +24,7 @@ import thiengo.com.br.camisasdefutebol.data.Database
 import thiengo.com.br.camisasdefutebol.extension.priceBRFormat
 import thiengo.com.br.camisasdefutebol.extension.validation
 import thiengo.com.br.camisasdefutebol.util.luhnAlgorithm
+import thiengo.com.br.camisasdefutebol.util.orderCodeGenerator
 import java.util.*
 
 
@@ -130,14 +131,14 @@ class ShirtsActivity : AppCompatActivity(),
         var totalPrice = 0.0F
 
         /*
-         * map é uma função de alto nível no Kotlin que
-         * também nos permite passar por todos os valores
-         * de alguma coleção e então atualiza-los ou apenas
-         * realizar algo que inclua eles, isso utilizando
-         * uma funcão. Abaixo estamos realizando uma operação
-         * com todos os valores em shrts: somando todos os
-         * preços de camisas em totalPrice.
-         * */
+		 * map é uma função de alto nível no Kotlin que
+		 * também nos permite passar por todos os valores
+		 * de alguma coleção e então atualiza-los ou apenas
+		 * realizar algo que inclua eles, isso utilizando
+		 * uma função. Abaixo estamos realizando uma operação
+		 * com todos os valores em shirts: somando todos os
+		 * preços de camisas em totalPrice.
+		 * */
         shirts.map{
             totalPrice += it.price
         }
@@ -192,12 +193,12 @@ class ShirtsActivity : AppCompatActivity(),
         val etCvv= dialog.customView!!.findViewById<EditText>(R.id.et_card_cvv)
         val etName= dialog.customView!!.findViewById<EditText>(R.id.et_card_name)
 
-        val isNumber = etNumber.validation(this) {
+        val isNumber = etNumber.validation {
             etNumber.text.isEmpty()
             || !luhnAlgorithm( etNumber.text.toString() )
         }
-        val isCvv = etCvv.validation(this) { etCvv.text.isEmpty() }
-        val isName = etName.validation( this ) { etName.text.isEmpty() }
+        val isCvv = etCvv.validation { etCvv.text.isEmpty() }
+        val isName = etName.validation { etName.text.isEmpty() }
 
         return isNumber && isCvv && isName
     }
@@ -250,25 +251,25 @@ class ShirtsActivity : AppCompatActivity(),
          *
          * https://www.thiengo.com.br/como-utilizar-spannable-no-android-para-customizar-strings
          * */
-        val spanContent = SpannableStringBuilder(getString(R.string.pay_done_content))
-        val spanOrderLabel = SpannableString(getString(R.string.pay_done_order_label))
+        val spanContent = SpannableStringBuilder( getString( R.string.pay_done_content ) )
+        val spanOrderLabel = SpannableString( getString( R.string.pay_done_order_label ) )
         val spanOrderNumber = SpannableString( orderCodeGenerator() )
 
         spanOrderLabel.setSpan(
-            StyleSpan(Typeface.BOLD),
+            StyleSpan( Typeface.BOLD ),
             0,
             spanOrderLabel.length,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         spanOrderNumber.setSpan(
-            ForegroundColorSpan( ContextCompat.getColor(this, R.color.colorPrice) ),
+            ForegroundColorSpan( ContextCompat.getColor( this, R.color.colorPrice ) ),
             0,
             spanOrderNumber.length,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         )
 
-        spanContent.append(spanOrderLabel)
-        spanContent.append(spanOrderNumber)
+        spanContent.append( spanOrderLabel )
+        spanContent.append( spanOrderNumber )
 
         /*
          * Apresentando a caixa de diálogo que informa que o
@@ -285,16 +286,5 @@ class ShirtsActivity : AppCompatActivity(),
                 .content( spanContent )
                 .positiveText(R.string.pay_done_button_label)
                 .show()
-    }
-
-    /*
-     * Simulador de código de compra realizada. O "+ 10000000"
-     * é necessário, pois Random().nextInt(10000000) pode gerar
-     * qualquer valor entre 0 e 9999999. Com o "+ 10000000"
-     * garantimos os 8 digitos de código de compra.
-     * */
-    private fun orderCodeGenerator(): String{
-        val code = Random().nextInt(10000000) + 10000000
-        return String.format(" %d", code)
     }
 }

@@ -26,19 +26,43 @@
     <string name="pay_neutral_button_label">
         VOLTAR
     </string>
-    <string name="pay_credit_cards_description">Bandeiras de cartão aceitas</string>
-    <string name="pay_label_card_number">Número do cartão:</string>
-    <string name="pay_hint_card_number">xxxx xxxx xxxx xxxx</string>
-    <string name="pay_label_card_cvv">Código de segurança - CVV:</string>
-    <string name="pay_hint_card_cvv">xxx ou xxxx</string>
-    <string name="pay_label_card_owner">Nome do proprietário do cartão - como está no cartão:</string>
-    <string name="pay_label_card_expire">Vencimento cartão</string>
-    <string name="pay_label_card_expire_month">Mês:</string>
+    <string name="pay_credit_cards_description">
+        Bandeiras de cartão aceitas
+    </string>
+    <string name="pay_label_card_number">
+        Número do cartão:
+    </string>
+    <string name="pay_hint_card_number">
+        xxxx xxxx xxxx xxxx
+    </string>
+    <string name="pay_label_card_cvv">
+        Código de segurança - CVV:
+    </string>
+    <string name="pay_hint_card_cvv">
+        xxx ou xxxx
+    </string>
+    <string name="pay_label_card_owner">
+        Nome do proprietário do cartão - como está no cartão:
+    </string>
+    <string name="pay_label_card_expire">
+        Vencimento cartão
+    </string>
+    <string name="pay_label_card_expire_month">
+        Mês:
+    </string>
     <string name="pay_label_card_expire_bar">/</string>
-    <string name="pay_label_card_expire_year">Ano:</string>
-    <string name="pay_label_card_total_parcels">Número de parcelas. Se > 10x tem adição de juros:</string>
-    <string name="pay_label_total">Total:</string>
-    <string name="pay_label_parcels_without_taxes">em até 10x sem juros.</string>
+    <string name="pay_label_card_expire_year">
+        Ano:
+    </string>
+    <string name="pay_label_card_total_parcels">
+        Número de parcelas. Se > 10x tem adição de juros:
+    </string>
+    <string name="pay_label_total">
+        Total:
+    </string>
+    <string name="pay_label_parcels_without_taxes">
+        em até 10x sem juros.
+    </string>
 
     <!--
         Strings da caixa de diálogo de processamento de
