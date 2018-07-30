@@ -5,7 +5,7 @@
 -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <!--
-        No <item> a seguir temos defnição de: cor de background;
+        No <item> a seguir temos a definição de: cor de background;
         curvatura de borda; e cor e largura de borda do componente
         retangular que está sendo trabalhado.
     -->
@@ -20,7 +20,7 @@
     </item>
 
     <!--
-        No <item> a seguir temos a defnição de imagem de background,
+        No <item> a seguir temos a definição de imagem de background,
         no caso a imagem ic_keyboard_arrow_down_white_18dp. A imagem
         estará centralizada na vertical e a 0.5dp da borda direita
         (center_vertical|right) do componente container (em nosso

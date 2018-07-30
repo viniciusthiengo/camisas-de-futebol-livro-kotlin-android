@@ -70,15 +70,16 @@ class ShirtsActivity : AppCompatActivity(),
         val divider = DividerItemDecoration(this, layoutManager.orientation )
 
         /*
-         * O método setDrawable() não aceita null como
-         * argumento e a assinatura de ContextCompat.getDrawable()
-         * indica que um null pode ser retornado, mesmo com nós
-         * desenvolvedores sabendo que isso é improvável para
-         * a configuração que estamos trabalhando. Devido a
-         * exigência de um "não null" em setDrawable() o
-         * operador que força a geração de um NullPointerException
-         * (o operador !!) caso um valor null seja retornado.
-         * */
+		 * O método setDrawable() não aceita null como
+		 * argumento e a assinatura de ContextCompat.getDrawable()
+		 * indica que um null pode ser retornado, mesmo com nós
+		 * desenvolvedores sabendo que isso é improvável para
+		 * a configuração que estamos trabalhando. Devido a
+		 * exigência de um "não null" em setDrawable() o
+		 * operador que força a geração de um NullPointerException
+		 * (o operador !!) está sendo utilizado para garantir ao compilador
+		 * que um valor null não será utilizado.
+		 * */
         divider.setDrawable(
             ContextCompat.getDrawable(
                 this,
@@ -158,12 +159,12 @@ class ShirtsActivity : AppCompatActivity(),
      * caso contrário os campos com dados inválidos serão
      * destacados em vermelho. Se o neutralButton for
      * acionado, a caixa de diálogo de pagamento será apenas
-     * fechada.
+     * dispensada.
      * */
     override fun onClick( dialog: MaterialDialog, which: DialogAction ) {
 
         if( which == DialogAction.POSITIVE
-            && validation( dialog ) ){
+            && validation( dialog ) ){ // Botão de ação positiva.
 
             dialog.dismiss()
 
@@ -178,7 +179,7 @@ class ShirtsActivity : AppCompatActivity(),
 
             callHeavyJobSimulator( materialDialog )
         }
-        else if( which == DialogAction.NEUTRAL ){
+        else if( which == DialogAction.NEUTRAL ){ // Botão de ação neutra.
             dialog.dismiss()
         }
     }
@@ -189,9 +190,10 @@ class ShirtsActivity : AppCompatActivity(),
      * de pagamento.
      * */
     private fun validation( dialog: MaterialDialog ): Boolean{
-        val etNumber= dialog.customView!!.findViewById<EditText>(R.id.et_card_number)
-        val etCvv= dialog.customView!!.findViewById<EditText>(R.id.et_card_cvv)
-        val etName= dialog.customView!!.findViewById<EditText>(R.id.et_card_name)
+        val customView = dialog.customView!!
+        val etNumber= customView.findViewById<EditText>(R.id.et_card_number)
+        val etCvv= customView.findViewById<EditText>(R.id.et_card_cvv)
+        val etName= customView.findViewById<EditText>(R.id.et_card_name)
 
         val isNumber = etNumber.validation {
             etNumber.text.isEmpty()
@@ -221,11 +223,11 @@ class ShirtsActivity : AppCompatActivity(),
                  * */
                 SystemClock.sleep(2000)
 
+                /*
+                 * Voltando a Thread principal (UI) para
+                 * poder trabalhar com o MaterialDialog.
+                 * */
                 runOnUiThread {
-                    /*
-                     * Voltando a Thread principal (UI) para
-                     * poder trabalhar com o MaterialDialog.
-                     * */
                     materialDialog.dismiss()
                     callDialogFinishBuy()
                 }

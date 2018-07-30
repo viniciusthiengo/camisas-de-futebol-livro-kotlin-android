@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Tema padrão, aplicado em todo o projeto. -->
+    <!-- Estilo padrão, aplicado em todo o projeto. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
 
         <item name="android:windowBackground">@drawable/background</item>
@@ -35,7 +35,7 @@
         parent="ThemeOverlay.AppCompat.Light" />
 
     <!--
-        Tema para personalizar a cor dos ícones de navegação e
+        Estilo para personalizar a cor dos ícones de navegação e
         da seta de "voltar" da barra de topo.
     -->
     <style
@@ -46,7 +46,7 @@
     </style>
 
     <!--
-        Tema para personalizar o título da barra de topo.
+        Estilo para personalizar o título da barra de topo.
     -->
     <style
         name="AppTheme.ToolbarFont"
@@ -61,7 +61,7 @@
         Para os ícones de "level de uniforme" e de "frete"
         da lista de itens do carrinho de compras. Muitas
         linhas de códigos estáticos serão economizadas
-        devido ao uso deste tema.
+        devido ao uso do estilo a seguir.
     -->
     <style name="AppTheme.ListItemIcon">
         <item name="android:layout_width">@dimen/list_icon_width</item>
@@ -106,7 +106,7 @@
         Para os rótulos dos conteúdos em texto da caixa de
         diálogo de pagamento. Muitas linhas de códigos
         estáticos serão economizadas devido ao uso deste
-        tema.
+        estilo.
     -->
     <style name="AppTheme.TextViewPayLabels">
         <item name="android:layout_width">wrap_content</item>
@@ -120,7 +120,7 @@
         Para os campos de entrada de texto da caixa de
         diálogo de pagamento. Muitas linhas de códigos
         estáticos serão economizadas devido ao uso deste
-        tema.
+        estilo.
     -->
     <style name="AppTheme.EditTextPay">
         <item name="android:layout_height">wrap_content</item>
