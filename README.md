@@ -4,7 +4,7 @@ Projeto Kotlin Android do livro "Desenvolvedor Kotlin Android - Bibliotecas para
 
 Projeto apresentado no **Capítulo 3** do livro, mais precisamente o capítulo "Material Dialogs Para Caixas de Diálogo em Qualquer Contexto".
 
-<img src="https://www.thiengo.com.br/img/livro/desenvolvedor-kotlin-android-bibliotecas-para-o-dia-a-dia/github/aplicativo-android-capitulo-04.jpg" alt="Telas do aplicativo Android do capítulo 3" height="360">
+<img src="https://www.thiengo.com.br/img/livro/desenvolvedor-kotlin-android-bibliotecas-para-o-dia-a-dia/github/aplicativo-android-capitulo-03.jpg" alt="Telas do aplicativo Android do capítulo 3" height="360">
 
 **Observação importante:** para o total entendimento do projeto é preciso ter em mãos o livro "Desenvolvedor Kotlin Android" com o capítulo 3 já aberto, pois as explicações detalhadas de todo o projeto deste repositório estarão nesta parte do livro.
 
